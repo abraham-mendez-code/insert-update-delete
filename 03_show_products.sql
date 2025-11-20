@@ -8,4 +8,4 @@ select
     ,CompanyName
 from
 	products p
-    join suppliers s on s.SupplierID = p.SupplierID;
+    join suppliers s on s.SupplierID = p.SupplierID
