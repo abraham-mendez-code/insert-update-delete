@@ -64,6 +64,32 @@ This repository contains SQL scripts demonstrating **basic CRUD operations** (Cr
     ```
 
 ***
+## 🧩 Interesting Code Segment 
+
+```sql
+-- Increase the new product's price by 15%
+update 
+	products
+set 
+	UnitPrice = UnitPrice * .15
+where
+	ProductID = (
+					select
+						ProductID
+					from
+						products
+					where
+						ProductName = 'Well Priced Milk'
+                    );
+```
+
+**Why it’s interesting:**
+
+*   It uses a **relative update** instead of a fixed value, which is great for dynamic adjustments.
+*   Multiplying by `1.15` applies a percentage increase without hardcoding the new price.
+*   This pattern is common in real-world scenarios like price adjustments, discounts, or inflation handling.
+
+***
 
 ## 💡 Purpose
 
